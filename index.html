@@ -28,29 +28,31 @@
 </head>
 <body class='bg-stone-100'>
     <div class="flex justify-center">
-        <div class="w-[63%] border border-stone-200">
-            <div class="flex flex-col gap-7 bg-white py-9 px-4 border-b border-stone-200">
+        <div class="w-full md:w-[63%] border border-stone-200">
+            <div class="flex flex-col gap-5 md:gap-7 bg-white py-9 px-4 border-b border-stone-200">
                 <div class="flex items-center gap-4 h-[15vh]">
-                    <div class="image h-full w-[16vh] overflow-hidden border border-stone-300 bg-stone-100 rounded-lg">
-                        <img class='w-full h-auto object-contain' src="https://res.cloudinary.com/drkfjbilw/image/upload/v1784351502/coat_lan4gg.jpg" alt="">
+                    <div class="image h-[16vh] w-[16vh] p-1 overflow-hidden border border-stone-200 bg-stone-100 rounded-lg">
+                        <div class="rounded-lg">
+                            <img class='w-full h-auto object-contain rounded-lg' src="https://res.cloudinary.com/drkfjbilw/image/upload/v1784351502/coat_lan4gg.jpg" alt="">
+                        </div>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-4xl font-bold">Vishal Ipar</span>
+                        <span class="text-2xl md:text-4xl font-bold">Vishal Ipar</span>
                         <div class="relative h-7 overflow-hidden">
                             <span id="current"
-                                class="absolute left-0 top-0 text-lg text-stone-500 will-change-transform">
+                                class="absolute left-0 top-0 text-sm md:text-lg text-stone-500 will-change-transform">
                                 ML Developer
                             </span>
                             <span id="next"
-                                class="absolute left-0 -translate-y-8 opacity-0 text-lg text-stone-500 will-change-transform">
+                                class="absolute left-0 -translate-y-8 opacity-0 text-sm md:text-lg text-stone-500 will-change-transform">
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class="intro flex flex-col gap-2">
-                    <p class='text-lg text-stone-800'>Machine Learning and backend developer</p>
+                <div class="intro flex flex-col gap-1 md:gap-2">
+                    <p class='text-md md:text-lg text-stone-800'>Machine Learning and backend developer</p>
                     <p>
-                        <ul class="list-disc list-inside pl-5 space-y-1 text-stone-500">
+                        <ul class="list-disc list-inside pl-5 space-y-1 text-sm md:text-base text-stone-500">
                             <li>I build machine learning systems end-to-end from cleaning the dataset to shipping the feature.</li>
                             <li>Comfortable moving between a Jupyter notebook and a production backend.</li>
                         </ul>
@@ -58,7 +60,7 @@
                 </div>
                 <div class="socials flex flex-col gap-3">
                     <p class='text-sm text-stone-500 font-semibold'>Here are my <span class='text-stone-800'>socials</span> and <span class='text-stone-800'>resume</span></p>
-                    <div class="icons flex gap-3">
+                    <div class="icons flex gap-3 flex-wrap">
                         <a href="mailto:vishalipar04@gmail.com" class='flex items-center gap-2 text-sm text-stone-500 font-semibold bg-stone-50 hover:bg-stone-100 px-2 py-2 rounded-lg w-fit'>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
                                 <g fill-opacity="0.52941" fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M4,5c-1.09306,0 -2,0.90694 -2,2v16c0,1.09306 0.90694,2 2,2h22c1.09306,0 2,-0.90694 2,-2v-16c0,-1.09306 -0.90694,-2 -2,-2zM6.69922,7h16.60156l-8.30078,6.13477zM5,9.47461l10,7.39062l10,-7.39062v13.52539h-20z"></path></g></g>
@@ -88,7 +90,7 @@
                 </div>
                 <div class="tech-stack flex flex-col gap-2">
                     <p class='text-stone-700 font-semibold uppercase'>Tech Stack</p>
-                    <div class="flex gap-5 text-stone-700">
+                    <div class="flex gap-5 flex-wrap text-stone-700">
                         <div class="flex flex-col items-center">
                             <div class="img h-8 w-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
