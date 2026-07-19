@@ -508,6 +508,72 @@
     </div>
     
     <script>
+        const roles = [
+        "ML Developer",
+        "Python Developer",
+        "Django Developer",
+        ];
+    
+        const current = document.getElementById("current");
+        const next = document.getElementById("next");
+    
+        let roleIndex  = 0;
+    
+        function changeRole() {
+            roleIndex  = (roleIndex  + 1) % roles.length;
+            next.textContent = roles[roleIndex];
+    
+            // Always start ABOVE
+            next.style.transition = "none";
+            next.style.transform = "translateY(-120%)";
+            next.style.opacity = "0";
+    
+            requestAnimationFrame(() => {
+                next.style.transition = "all .55s cubic-bezier(.22,1,.36,1)";
+                current.style.transition = "all .55s cubic-bezier(.22,1,.36,1)";
+    
+                // Current goes DOWN
+                current.style.transform = "translateY(120%)";
+                current.style.opacity = "0";
+    
+                // Next comes FROM TOP
+                next.style.transform = "translateY(0)";
+                next.style.opacity = "1";
+            });
+    
+            setTimeout(() => {
+                current.textContent = roles[roleIndex];
+    
+                current.style.transition = "none";
+                current.style.transform = "translateY(0)";
+                current.style.opacity = "1";
+    
+                next.style.transition = "none";
+                next.style.transform = "translateY(-120%)";
+                next.style.opacity = "0";
+            }, 250);
+        }
+        setInterval(changeRole, 3000);
+    
+        function toggleAccordion(header) {
+            const icon = header.querySelector('.angle-icon');
+            const content = header.nextElementSibling;
+            const isOpen = content.style.maxHeight !== '0px';
+        
+            if (isOpen) {
+            // closing: lock in current height, then collapse to 0
+            content.style.maxHeight = content.scrollHeight + 'px';
+            requestAnimationFrame(() => {
+                content.style.maxHeight = '0px';
+            });
+            icon.classList.remove('rotate-180');
+            } else {
+            // opening: expand to natural content height
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.classList.add('rotate-180');
+            }
+        }
+        
         const container = document.getElementById("scroll-container");
         const dots = document.querySelectorAll(".dot");
         const total = container.children.length;
@@ -565,72 +631,4 @@
     </script>
 </body>
 
-<script>
-    const roles = [
-    "ML Developer",
-    "Python Developer",
-    "Django Developer",
-    ];
-
-    const current = document.getElementById("current");
-    const next = document.getElementById("next");
-
-    let index = 0;
-
-    function changeRole() {
-        index = (index + 1) % roles.length;
-        next.textContent = roles[index];
-
-        // Always start ABOVE
-        next.style.transition = "none";
-        next.style.transform = "translateY(-120%)";
-        next.style.opacity = "0";
-
-        requestAnimationFrame(() => {
-            next.style.transition = "all .55s cubic-bezier(.22,1,.36,1)";
-            current.style.transition = "all .55s cubic-bezier(.22,1,.36,1)";
-
-            // Current goes DOWN
-            current.style.transform = "translateY(120%)";
-            current.style.opacity = "0";
-
-            // Next comes FROM TOP
-            next.style.transform = "translateY(0)";
-            next.style.opacity = "1";
-        });
-
-        setTimeout(() => {
-            current.textContent = roles[index];
-
-            current.style.transition = "none";
-            current.style.transform = "translateY(0)";
-            current.style.opacity = "1";
-
-            next.style.transition = "none";
-            next.style.transform = "translateY(-120%)";
-            next.style.opacity = "0";
-        }, 250);
-    }
-    setInterval(changeRole, 3000);
-
-    function toggleAccordion(header) {
-      const icon = header.querySelector('.angle-icon');
-      const content = header.nextElementSibling;
-      const isOpen = content.style.maxHeight !== '0px';
-   
-      if (isOpen) {
-        // closing: lock in current height, then collapse to 0
-        content.style.maxHeight = content.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          content.style.maxHeight = '0px';
-        });
-        icon.classList.remove('rotate-180');
-      } else {
-        // opening: expand to natural content height
-        content.style.maxHeight = content.scrollHeight + 'px';
-        icon.classList.add('rotate-180');
-      }
-    }
-</script>
-<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 </html>
